@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class CameraController : MonoBehaviour
 {
+//edit
     // Speed at which the camera moves and rotates
     // Speed at which the camera rotates
     public float rotationSpeed = 100.0f;
