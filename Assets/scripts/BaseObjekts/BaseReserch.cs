@@ -18,6 +18,9 @@ public class BaseReserch : ScriptableObject
     public TechStufe techStufe;
     public BaseObjekt.Type type;
 
+    public string nameId;
+    public string DestriptionID;
+
     public List<BaseObjekt> freigeschaltet;
 
     public BaseReserch()

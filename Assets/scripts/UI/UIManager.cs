@@ -24,9 +24,18 @@ public class UIManager : MonoBehaviour
         if(id == 1)
         {
             List.SetActive(true);
+            List<BaseObjekt> list = new List<BaseObjekt>();
+            foreach (var item in GM.CurrentGameData.buildings)
+            {
+                if(item.type == BaseObjekt.Type.Building)
+                    list.Add(item);
+            }
+            GenerateList(list);
+        }
+        if(id == 2)
+        {
 
         }
-
     }
     public void GenerateList(List<BaseObjekt> list)
     {

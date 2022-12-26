@@ -3,17 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class BaseBuilding : MonoBehaviour
+public abstract class BaseBuilding : BaseObjekt
 {
-    // Start is called before the first frame update
-    void Start()
+    public BaseBuilding()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        type = Type.Building;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public abstract class BaseObjekt : MonoBehaviour
+public abstract class BaseObjekt : MonoBehaviour 
 {
     public enum Type
     {
@@ -17,7 +17,6 @@ public abstract class BaseObjekt : MonoBehaviour
     }
 
     public Type type;
-    public string name;
     public string description;
 
 
