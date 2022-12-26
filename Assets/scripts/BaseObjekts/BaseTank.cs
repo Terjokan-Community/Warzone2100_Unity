@@ -13,5 +13,9 @@ public class BaseTank : BaseObjekt
         type = Type.Tank;
     }
 
+    public virtual void Shoot(Vector3 targetPosition)
+    {
+        // uses the bullet out of top to schoot
+    }
 
 }

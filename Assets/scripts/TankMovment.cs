@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class BaseBuilding : MonoBehaviour
+public class TankMovment : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
