@@ -25,6 +25,7 @@ namespace Mods.ModCore
 
         public void LoadMods()
         {
+            
             CurrentMods = new HashSet<IModBase>();
             foreach (var ele in DirectoryPaths)
             {

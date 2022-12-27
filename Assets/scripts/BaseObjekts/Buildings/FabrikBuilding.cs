@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FabrikBuilding : BaseBuilding
 {
-    public FabrikBuilding() : base()
+    public FabrikBuilding() : base() { }
+    void Start()
     {
         name = GameManager.Singleton.Language.GetStringWithId("base.building.fabric.name");
         description = GameManager.Singleton.Language.GetStringWithId("base.building.fabric.destription");

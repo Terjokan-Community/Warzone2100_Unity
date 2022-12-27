@@ -19,6 +19,9 @@ public abstract class BaseObjekt : MonoBehaviour
     public Type type;
     public string description;
 
+    public bool UI;
+    public GameObject UIModdel;
+
 
 
 }

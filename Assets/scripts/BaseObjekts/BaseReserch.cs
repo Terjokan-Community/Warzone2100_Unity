@@ -21,10 +21,21 @@ public class BaseReserch : ScriptableObject
     public string nameId;
     public string DestriptionID;
 
+    public bool isReserched;
+
     public List<BaseObjekt> freigeschaltet;
 
     public BaseReserch()
     {
         type = BaseObjekt.Type.Reserch;
+    }
+
+    public BaseObjekt ToBase()
+    {
+        BaseObjekt t = new BaseOtherObjekts(type);
+        t.name = GameManager.Singleton.Language.GetStringWithId(nameId);
+        t.description = GameManager.Singleton.Language.GetStringWithId(DestriptionID);
+
+        return t;
     }
 }

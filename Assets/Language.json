@@ -1,0 +1,12 @@
+{
+  "languages": {
+    "Deutsch": {
+      "ids": {
+        "base.building.fabric.name": "Fabrik",
+        "base.building.fabric.destription": "In der Fabrik werden Fahrzeuge (wie z.B.: der Panza) hergestellt.",
+        "base.building.radar_big.name": "Fabrik",
+        "base.building.radar_big.destription": "In der Fabrik werden Fahrzeuge (wie z.B.: der Panza) hergestellt."
+      }
+    }
+  }
+}

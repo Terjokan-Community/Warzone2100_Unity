@@ -18,6 +18,17 @@ public class Language
     [SerializeField]
     public Dictionary<string,string> ids = new Dictionary<string, string>();
 
+    public void Start()
+    {
+        Language l = new Language();
+        l.type = LanguageType.Deutsch;
+        l.ids = ids;
+        Language l2 = new Language();
+        l2.type = LanguageType.English;
+        l2.ids = ids;
+        Languages ll = new Languages();
+        ll.languages.Add(type, l);
+    }
 
     public string GetStringWithId(string id)
     {
