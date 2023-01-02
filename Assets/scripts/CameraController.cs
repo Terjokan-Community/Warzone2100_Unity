@@ -7,6 +7,14 @@ public class CameraController : MonoBehaviour
 {
     // Speed at which the camera moves and rotates
     // Speed at which the camera rotates
+
+    public float movementSpeed = 10.0f;
+
+    public float edgeSensitivity = 10.0f;
+
+    public float maxMovementSpeed = 50.0f;
+
+    public GameObject targetObject;
     public float rotationSpeed = 100.0f;
 
     // Zoom settings
@@ -17,20 +25,17 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Rotate the camera with the right mouse button
         if (Input.GetMouseButton(1))
         {
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
-
-            // Calculate the rotation based on the mouse movement and the rotation speed
-            float rotationX = mouseX * rotationSpeed * Time.deltaTime;
-            float rotationY = mouseY * rotationSpeed * Time.deltaTime;
-
-            // Rotate the player around the parent object's Y axis
-            transform.RotateAround(transform.parent.position, transform.parent.up, rotationY);
-            //transform.RotateAround(transform.parent.position, transform.parent.right, rotationX);
+            float mouseX = Input.mousePosition.x;
+            float mouseY = Input.mousePosition.y;
+            transform.RotateAround(targetObject.transform.position, transform.up, mouseX * rotationSpeed );
+            transform.RotateAround(targetObject.transform.position, transform.right, mouseY * -rotationSpeed);
         }
+
+    
 
         if (!EventSystem.current.IsPointerOverGameObject())
         {

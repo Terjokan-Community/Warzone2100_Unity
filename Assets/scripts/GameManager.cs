@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Singleton = this;
+        Language = new Language();
+        Language.LoadFile();
+        Language.LoadLanguage(Language.LanguageType.Deutsch, this);
     }
     #endregion
 
@@ -35,20 +38,17 @@ public class GameManager : MonoBehaviour
 
     public Language Language;
     public ModManager modManager;
+    public BuildingSystem buildingSystem;
 
 
-    
     private void Start()
     {
-        Language = new Language();
-        Language.LoadFile();
-        Language.LoadLanguage(Language.LanguageType.Deutsch, this);
 
         if (!Directory.Exists(Application.persistentDataPath + "/mods"))
             Directory.CreateDirectory(Application.persistentDataPath + "/mods");
         modManager = new ModManager(Application.persistentDataPath + "/mods");
-        
 
+        buildingSystem.GenerateGrid(100, 100, 2, "TestMap");
     }
 }
 

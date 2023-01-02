@@ -9,5 +9,9 @@ public class FabrikBuilding : BaseBuilding
     {
         name = GameManager.Singleton.Language.GetStringWithId("base.building.fabric.name");
         description = GameManager.Singleton.Language.GetStringWithId("base.building.fabric.destription");
+
+        width = 2;
+        height = 2;
     }
+    public BaseTank CurrentTank;
 }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [System.Serializable]
 public abstract class BaseObjekt : MonoBehaviour 
 {
@@ -20,7 +19,7 @@ public abstract class BaseObjekt : MonoBehaviour
     public string description;
 
     public bool UI;
-    public GameObject UIModdel;
+    public Sprite UIImage;
 
 
 

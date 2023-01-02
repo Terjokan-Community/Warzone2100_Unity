@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ReserchedData
   m_EditorClassIdentifier: 
   buildings:
-  - {fileID: 3469287837559734454, guid: eeac4ca6f640f10458158f061c3ed975, type: 3}
-  - {fileID: 3469287836956500815, guid: fbc8850577397814f8060258b3d0644c, type: 3}
+  - {fileID: 4832681934376114934, guid: 0802d0af56b760844b6e207971a5e73c, type: 3}
+  - {fileID: 7897842239689118868, guid: 58cf107e0cf851a4eb6d9272dd799424, type: 3}
   tankBodies: []
   tankBottum: []
   tankTop: []
