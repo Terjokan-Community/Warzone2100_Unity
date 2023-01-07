@@ -6,6 +6,8 @@ using UnityEngine;
 [System.Serializable]
 public class Data : ScriptableObject
 {
+    public int Oil;
+
     public List<BaseBuilding> buildings;
     public List<BaseTankBody> tankBodies;
     public List<BaseTankBottum> tankBottum;

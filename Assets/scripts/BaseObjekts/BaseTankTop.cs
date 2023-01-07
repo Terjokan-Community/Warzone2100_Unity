@@ -6,6 +6,10 @@ using UnityEngine;
 [System.Serializable]
 public class BaseTankTop : ScriptableObject
 {
+    public int MaxHealth;
+    public float weight;
+
+    public float ReloadTime;
     public BaseBullet bullet;
 
     public GameObject Moddel;

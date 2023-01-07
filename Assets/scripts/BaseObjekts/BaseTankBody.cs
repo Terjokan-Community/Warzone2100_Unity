@@ -6,5 +6,6 @@ using UnityEngine;
 [System.Serializable]
 public class BaseTankBody : ScriptableObject
 {
-    
+    public int MaxHealth;
+    public float weight;
 }
