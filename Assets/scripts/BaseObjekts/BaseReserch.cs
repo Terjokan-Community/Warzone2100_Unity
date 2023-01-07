@@ -32,9 +32,10 @@ public class BaseReserch : ScriptableObject
 
     public BaseObjekt ToBase()
     {
-        BaseObjekt t = new BaseOtherObjekts(type);
+        BaseOtherObjekts t = new BaseOtherObjekts(type);
         t.name = GameManager.Singleton.Language.GetStringWithId(nameId);
         t.description = GameManager.Singleton.Language.GetStringWithId(DestriptionID);
+        t.Original = this;
 
         return t;
     }

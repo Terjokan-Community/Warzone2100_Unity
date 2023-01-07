@@ -8,4 +8,19 @@ public class BaseTankBody : ScriptableObject
 {
     public int MaxHealth;
     public float weight;
+
+    public bool CanHold2Cannons;
+
+    public string NameId;
+    public string DescriptionId;
+
+    public BaseObjekt ToBase()
+    {
+        BaseOtherObjekts t = new BaseOtherObjekts(BaseObjekt.Type.TankBody);
+        t.name = GameManager.Singleton.Language.GetStringWithId(NameId);
+        t.description = GameManager.Singleton.Language.GetStringWithId(DescriptionId);
+        t.Original = this;
+
+        return t;
+    }
 }

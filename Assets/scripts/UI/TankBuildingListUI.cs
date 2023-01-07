@@ -18,6 +18,9 @@ public class TankBuildingListUI : MonoBehaviour
     {
         if(baseObjekt.type == BaseObjekt.Type.Building)
             GameManager.Singleton.buildingSystem.currentSelected = (BaseBuilding)baseObjekt;
+        if(baseObjekt.type == BaseObjekt.Type.TankBottum || baseObjekt.type == BaseObjekt.Type.TankBody || baseObjekt.type == BaseObjekt.Type.TankHead)
+            GameManager.Singleton.UIManager.SetCurrentTank(baseObjekt);
+
     }
 
 }

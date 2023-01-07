@@ -4147,6 +4147,18 @@ MonoBehaviour:
   List: {fileID: 457657567}
   ListObjectPrefab: {fileID: 4887313496634360137, guid: c021269e70c3dca4c8997533c190b1ed, type: 3}
   ListBottum: {fileID: 890176941}
+  ListOtherSide: {fileID: 1231016868}
+  TankBuilder: {fileID: 994922764}
+  TankBuildingState: 0
+  BuldingState2Button: {fileID: 0}
+  BuldingState3Button: {fileID: 0}
+  BuldingState4Button: {fileID: 0}
+  Shooting: {fileID: 0}
+  NotShooting: {fileID: 0}
+  buildingS1: {fileID: 0}
+  buildingS2: {fileID: 0}
+  buildingS3: {fileID: 0}
+  buildingS4: {fileID: 0}
 --- !u!1 &1394489898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4774,6 +4786,7 @@ MonoBehaviour:
   Language:
     type: 0
   buildingSystem: {fileID: 920470870}
+  UIManager: {fileID: 0}
 --- !u!4 &1781341697
 Transform:
   m_ObjectHideFlags: 0

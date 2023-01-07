@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public Language Language;
     public ModManager modManager;
     public BuildingSystem buildingSystem;
+    public UIManager UIManager;
 
 
     private void Start()

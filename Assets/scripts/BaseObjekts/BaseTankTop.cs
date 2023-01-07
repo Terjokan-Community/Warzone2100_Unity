@@ -16,11 +16,22 @@ public class BaseTankTop : ScriptableObject
 
     public BaseReserch NessesaryReserch;
 
-    public BaseObjekt.Type type;
 
     public BaseTankTop()
     {
-        type = BaseObjekt.Type.TankHead;
+
+    }
+    public string NameId;
+    public string DescriptionId;
+
+    public BaseObjekt ToBase()
+    {
+        BaseOtherObjekts t = new BaseOtherObjekts(BaseObjekt.Type.TankHead);
+        t.name = GameManager.Singleton.Language.GetStringWithId(NameId);
+        t.description = GameManager.Singleton.Language.GetStringWithId(DescriptionId);
+        t.Original = this;
+
+        return t;
     }
 
 }

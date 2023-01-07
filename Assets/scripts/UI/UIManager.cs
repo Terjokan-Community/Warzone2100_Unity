@@ -11,11 +11,98 @@ public class UIManager : MonoBehaviour
 
     public GameObject ListBottum;
 
+    
+    [Space]
+    [Header("Tank Building System")]
+    [Space]
+    public GameObject ListOtherSide;
+    public GameObject TankBuilder;
+    [Space]
+    public int TankBuildingState;
+    public GameObject BuldingState2Button;
+    public GameObject BuldingState3Button;
+    public GameObject BuldingState4Button;
+    public GameObject Shooting;
+    public GameObject NotShooting;
+    [Space]
+    public BaseTankBody buildingS1;
+    public BaseTankBottum buildingS2;
+    public BaseTankTop buildingS3;
+    public BaseTankTop buildingS4;
+    public void OnBuildingStateClick(int id)
+    {
+        TankBuildingState = id;
+        UpdateBuldingState(true);
+    }
 
+    public void SetCurrentTank(BaseObjekt bs)
+    {
+        if(bs.type == BaseObjekt.Type.TankBottum)
+        {
+            buildingS2 = (BaseTankBottum)((BaseOtherObjekts)bs).Original;
+        }
+        if (bs.type == BaseObjekt.Type.TankHead)
+        {
+            if (TankBuildingState == 3)
+                buildingS3 = (BaseTankTop)((BaseOtherObjekts)bs).Original;
+            else
+                buildingS4 = (BaseTankTop)((BaseOtherObjekts)bs).Original;
+        }
+        if (bs.type == BaseObjekt.Type.TankBody)
+        {
+            buildingS1 = (BaseTankBody)((BaseOtherObjekts)bs).Original;
+        }
+        UpdateBuldingState();
+    }
+
+    public void UpdateBuldingState(bool SetUversprung = false)
+    {
+        
+
+        if (buildingS1 != null) { TankBuildingState = SetUversprung == false ? 2 : TankBuildingState; BuldingState2Button.SetActive(true); }
+        if (buildingS2 != null) { TankBuildingState = SetUversprung == false ? 3 : TankBuildingState; BuldingState3Button.SetActive(true); }
+        if (buildingS3 != null && buildingS1.CanHold2Cannons) { TankBuildingState = SetUversprung == false ? 4 : TankBuildingState; BuldingState3Button.SetActive(true); }
+        
+        if(buildingS1 == null)
+            BuldingState2Button.SetActive(false);
+        if (buildingS2 == null)
+            BuldingState3Button.SetActive(false);
+        if (buildingS3 == null)
+            BuldingState4Button.SetActive(false);
+        int i = TankBuildingState;
+        if (i == 1)
+        {
+            List<BaseObjekt> list = new List<BaseObjekt>();
+            foreach (BaseTankBody item in GM.ReserchedData.tankBodies)
+            {
+                list.Add(item.ToBase());
+            }
+            GenerateList(list, ListOtherSide);
+        }
+        if (i == 2)
+        {
+            List<BaseObjekt> list = new List<BaseObjekt>();
+            foreach (BaseTankBottum item in GM.ReserchedData.tankBottum)
+            {
+                list.Add(item.ToBase());
+            }
+            GenerateList(list, ListOtherSide);
+        }
+        if (i == 3 || i == 4)
+        {
+            List<BaseObjekt> list = new List<BaseObjekt>();
+            foreach (BaseTankTop item in GM.ReserchedData.tankTop)
+            {
+                list.Add(item.ToBase());
+            }
+            GenerateList(list, ListOtherSide);
+        }
+    }
     void Start()
     {
         List.transform.parent.parent.parent.parent.gameObject.SetActive(false);
         ListBottum.transform.parent.parent.parent.parent.gameObject.SetActive(false);
+        TankBuilder.SetActive(false);
     }
 
 
@@ -25,6 +112,7 @@ public class UIManager : MonoBehaviour
         {
             List.transform.parent.parent.parent.parent.gameObject.SetActive(false);
             ListBottum.transform.parent.parent.parent.parent.gameObject.SetActive(false);
+            TankBuilder.SetActive(false);
         }
         if(id == 1)
         {
@@ -70,7 +158,8 @@ public class UIManager : MonoBehaviour
         }
         if(id == 4)
         {
-            //TODO: tank building system
+            TankBuilder.SetActive(true);
+            TankBuildingState = 1;
         }
         if (id == 5)
         {
